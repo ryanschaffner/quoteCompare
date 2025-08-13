@@ -1,0 +1,69 @@
+{
+  "name": "InsuranceQuote",
+  "type": "object",
+  "properties": {
+    "quote_name": {
+      "type": "string",
+      "description": "Name/identifier for the quote"
+    },
+    "insurer_name": {
+      "type": "string",
+      "description": "Name of the insurance company"
+    },
+    "policy_period": {
+      "type": "string",
+      "description": "Policy effective dates"
+    },
+    "total_premium": {
+      "type": "number",
+      "description": "Total annual premium cost"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to the uploaded PDF"
+    },
+    "coverages": {
+      "type": "array",
+      "description": "List of coverage types and limits",
+      "items": {
+        "type": "object",
+        "properties": {
+          "coverage_type": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "string"
+          },
+          "deductible": {
+            "type": "string"
+          },
+          "premium": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "description": "List of policy exclusions",
+      "items": {
+        "type": "string"
+      }
+    },
+    "key_features": {
+      "type": "array",
+      "description": "Notable policy features or benefits",
+      "items": {
+        "type": "string"
+      }
+    },
+    "comparison_id": {
+      "type": "string",
+      "description": "Links quotes that belong to the same comparison"
+    }
+  },
+  "required": [
+    "quote_name",
+    "file_url"
+  ]
+}

@@ -1,0 +1,36 @@
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BarChart3 } from "lucide-react";
+
+export default function AIComparisonDisplay({ markdownContent }) {
+  if (!markdownContent) {
+    return (
+      <Card className="bg-white/90 backdrop-blur-sm shadow-xl border-0">
+        <CardContent className="p-12 text-center">
+          <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <BarChart3 className="w-8 h-8 text-slate-400" />
+          </div>
+          <h3 className="text-xl font-semibold text-slate-700">No AI Analysis Generated</h3>
+          <p className="text-slate-500">Click "Regenerate Analysis" to create the comparison.</p>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="bg-white/90 backdrop-blur-sm shadow-xl border-0">
+      <CardContent className="p-6">
+        <article
+          className="prose prose-slate max-w-none 
+                     prose-headings:text-slate-800 
+                     prose-table:border prose-table:border-slate-200
+                     prose-th:bg-slate-50 prose-th:p-3 prose-th:font-semibold
+                     prose-td:p-3 prose-td:border-t prose-td:border-slate-200"
+        >
+          <ReactMarkdown>{markdownContent}</ReactMarkdown>
+        </article>
+      </CardContent>
+    </Card>
+  );
+}

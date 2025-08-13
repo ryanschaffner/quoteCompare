@@ -1,0 +1,42 @@
+{
+  "name": "QuoteComparison",
+  "type": "object",
+  "properties": {
+    "comparison_name": {
+      "type": "string",
+      "description": "Name for this comparison session"
+    },
+    "client_name": {
+      "type": "string",
+      "description": "Name of the client/business"
+    },
+    "agent_recommendation": {
+      "type": "string",
+      "description": "Editable recommendation text from the agent"
+    },
+    "executive_summary": {
+      "type": "string",
+      "description": "High-level overview of both options"
+    },
+    "quote_a_id": {
+      "type": "string",
+      "description": "Reference to first quote"
+    },
+    "quote_b_id": {
+      "type": "string",
+      "description": "Reference to second quote"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready_for_review",
+        "sent_to_client"
+      ],
+      "default": "draft"
+    }
+  },
+  "required": [
+    "comparison_name"
+  ]
+}
